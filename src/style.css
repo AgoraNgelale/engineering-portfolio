@@ -52,3 +52,6 @@
 .hero-portrait::before{inset:0;background:#102b37;z-index:0}
 .portrait-ring{inset:0;display:block;z-index:2}
 @media(max-width:850px){.hero-portrait{width:min(240px,70vw);max-width:240px;justify-self:center}}
+
+/* Mobile hero: lead with the headline, then show the portrait */
+@media(max-width:850px){.hero-copy{grid-row:1;min-width:0}.hero-portrait{grid-row:2;margin:12px auto 0}.hero-intro{gap:30px}}
