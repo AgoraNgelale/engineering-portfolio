@@ -15,3 +15,16 @@
 .case-navigation{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 
 .project-diagram{width:100%;height:100%;object-fit:contain;background:#fff;padding:8px}
+
+/* Subtle entrance animation and a ring that draws around the portrait */
+.hero-portrait{position:relative;border:0;padding:10px;overflow:visible;box-shadow:none;animation:portrait-enter .85s cubic-bezier(.2,.75,.2,1) both}
+.hero-portrait::before{content:"";position:absolute;inset:-8px;border-radius:50%;background:#102b37;z-index:-1}
+.hero-portrait img{position:relative;z-index:1}
+.portrait-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;transform:rotate(-90deg);z-index:2}
+.portrait-ring circle{fill:none;stroke:#46d9ec;stroke-width:1.4;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;animation:ring-draw 1.6s cubic-bezier(.3,.7,.2,1) .3s forwards,ring-glow 5s ease-in-out 1.9s infinite}
+.hero-copy{animation:copy-enter .75s ease-out both}
+@keyframes portrait-enter{from{opacity:0;transform:translateX(32px) scale(.94)}to{opacity:1;transform:translateX(0) scale(1)}}
+@keyframes copy-enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ring-draw{to{stroke-dashoffset:0}}
+@keyframes ring-glow{0%,100%{stroke:#46d9ec;filter:drop-shadow(0 0 2px #46d9ec66)}50%{stroke:#77f2ca;filter:drop-shadow(0 0 5px #77f2ca88)}}
+@media(prefers-reduced-motion:reduce){.hero-portrait,.hero-copy,.portrait-ring circle{animation:none!important}.portrait-ring circle{stroke-dashoffset:0}}
