@@ -53,5 +53,5 @@
 .portrait-ring{inset:0;display:block;z-index:2}
 @media(max-width:850px){.hero-portrait{width:min(240px,70vw);max-width:240px;justify-self:center}}
 
-/* Mobile hero: lead with the headline, then show the portrait */
-@media(max-width:850px){.hero-copy{grid-row:1;min-width:0}.hero-portrait{grid-row:2;margin:12px auto 0}.hero-intro{gap:30px}}
+/* Mobile hero: portrait first, slightly smaller, followed by headline */
+@media(max-width:850px){.hero-portrait{grid-row:1;width:min(200px,60vw);max-width:200px;margin:0 auto 8px;justify-self:center}.hero-copy{grid-row:2;min-width:0}.hero-intro{gap:26px}}
