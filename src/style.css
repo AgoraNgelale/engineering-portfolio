@@ -55,3 +55,10 @@
 
 /* Mobile hero: portrait first, slightly smaller, followed by headline */
 @media(max-width:850px){.hero-portrait{grid-row:1;width:min(200px,60vw);max-width:200px;margin:0 auto 8px;justify-self:center}.hero-copy{grid-row:2;min-width:0}.hero-intro{gap:26px}}
+
+/* ORNL employer identity in experience cards */
+.experience-employer{display:flex;align-items:center;gap:16px;margin:18px 0 20px;flex-wrap:wrap}
+.experience-employer strong{font-size:1rem;line-height:1.5}
+.experience-logo{display:block;width:78px;height:78px;object-fit:contain;flex-shrink:0;padding:9px;border-radius:14px;background:#f7faf9;border:1px solid #35505a;box-shadow:0 6px 22px #0004;transition:transform .3s ease,box-shadow .3s ease}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.experience-employer:hover .experience-logo{transform:translateY(-2px);box-shadow:0 9px 25px #46d9ec22}}
+@media(max-width:760px){.experience-logo{width:64px;height:64px;padding:7px}.experience-employer{gap:12px}}
