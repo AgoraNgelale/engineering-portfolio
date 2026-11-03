@@ -35,3 +35,13 @@
 .scroll-reveal.is-visible{opacity:1;transform:translateY(0)}
 }
 @media(prefers-reduced-motion:reduce){.scroll-reveal{opacity:1!important;transform:none!important;transition:none!important}}
+
+/* Lift and gently enlarge project cards without shifting the grid */
+.project{position:relative;z-index:0;scale:1;transition:scale .38s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .38s ease}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+.project:hover{scale:1.045;z-index:2;border-color:#46d9ec;box-shadow:0 20px 48px #0008,0 0 24px #46d9ec1c}
+.project:hover .project-visual img{scale:1.025}
+.project-visual img{transition:scale .45s cubic-bezier(.2,.8,.2,1)}
+}
+.project:focus-visible{z-index:2;border-color:#46d9ec;box-shadow:0 0 0 2px #46d9ec55}
+@media(prefers-reduced-motion:reduce){.project,.project-visual img{transition:none!important}}
