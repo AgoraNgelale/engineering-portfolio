@@ -45,3 +45,10 @@
 }
 .project:focus-visible{z-index:2;border-color:#46d9ec;box-shadow:0 0 0 2px #46d9ec55}
 @media(prefers-reduced-motion:reduce){.project,.project-visual img{transition:none!important}}
+
+/* Keep the animated ring concentric with the circular portrait at every viewport */
+.hero-portrait{padding:0;isolation:isolate;flex-shrink:0}
+.hero-portrait img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:cover;object-position:center;border-radius:50%;z-index:1}
+.hero-portrait::before{inset:0;background:#102b37;z-index:0}
+.portrait-ring{inset:0;display:block;z-index:2}
+@media(max-width:850px){.hero-portrait{width:min(240px,70vw);max-width:240px;justify-self:center}}
